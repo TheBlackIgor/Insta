@@ -46,6 +46,7 @@
 
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/buttonCamera"
             android:layout_width="match_parent"
             android:layout_height="240dp"
             android:orientation="horizontal"
@@ -53,7 +54,7 @@
             tools:ignore="MissingConstraints">
 
             <LinearLayout
-                android:id="@+id/button1"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -78,7 +79,7 @@
 
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/button2"
+                android:id="@+id/buttonAlbum"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
