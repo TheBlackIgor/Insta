@@ -36,7 +36,7 @@ public class Images extends AppCompatActivity {
         Log.d("XXX", folder);
 
         File pic = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-        File dir = new File(pic, "RyszkaJakub/" + folder);
+        File dir = new File(pic, "swierczynski/" + folder);
         Log.d("bbb" , dir.getPath());
         dir.mkdir();
 

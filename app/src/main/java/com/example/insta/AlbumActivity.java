@@ -48,13 +48,13 @@ public class AlbumActivity extends AppCompatActivity {
         setContentView(R.layout.activity_album);
 
         File pic = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-        File dir = new File(pic, "RyszkaJakub");
+        File dir = new File(pic, "swierczynski");
         dir.mkdir();
-        File dir1 = new File(pic, "RyszkaJakub/ludzie");
+        File dir1 = new File(pic, "swierczynski/ludzie");
         dir1.mkdir();
-        dir1 = new File(pic, "RyszkaJakub/rzeczy");
+        dir1 = new File(pic, "swierczynski/rzeczy");
         dir1.mkdir();
-        dir1 = new File(pic, "RyszkaJakub/miejsca");
+        dir1 = new File(pic, "swierczynski/miejsca");
         dir1.mkdir();
 
         File[] files = dir.listFiles();
@@ -77,7 +77,7 @@ public class AlbumActivity extends AppCompatActivity {
                 alert.setPositiveButton("USUŃ", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
-                        File toRemove = new File(pic, "RyszkaJakub/" + adapterView.getItemAtPosition(i).toString());
+                        File toRemove = new File(pic, "swierczynski/" + adapterView.getItemAtPosition(i).toString());
                         toRemove.delete();
                         refreshDirectory(dir);
                     }
@@ -107,7 +107,7 @@ public class AlbumActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
                         File pic = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-                        File dir1 = new File(pic, "RyszkaJakub/" +  input.getText());
+                        File dir1 = new File(pic, "swierczynski/" +  input.getText());
                         dir1.mkdir();
                         refreshDirectory(dir);
                     }
@@ -128,7 +128,7 @@ public class AlbumActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(AlbumActivity.this, MediaStore.Images.class);
+                Intent intent = new Intent(AlbumActivity.this, Images.class);
                 intent.putExtra("folder", adapterView.getItemAtPosition(i).toString());
                 startActivity(intent);
             }
