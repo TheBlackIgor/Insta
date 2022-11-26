@@ -58,9 +58,6 @@ public class AlbumActivity extends AppCompatActivity {
         dir1.mkdir();
 
         File[] files = dir.listFiles();
-        for(File file : dir.listFiles()){
-            Log.d("TAG", "Nr klikanego wiersza : " + file.toString());
-        }
 
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
@@ -131,6 +128,17 @@ public class AlbumActivity extends AppCompatActivity {
                 Intent intent = new Intent(AlbumActivity.this, Images.class);
                 intent.putExtra("folder", adapterView.getItemAtPosition(i).toString());
                 startActivity(intent);
+                AlertDialog.Builder alert = new AlertDialog.Builder(AlbumActivity.this);
+                alert.setTitle(dir.listFiles()[i].getName());
+
+                alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+
+                    }
+                });
+
+                alert.show();
             }
         });
 

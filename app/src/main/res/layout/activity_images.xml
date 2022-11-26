@@ -9,7 +9,15 @@
         android:layout_height="match_parent"
         android:id="@+id/imageLayout"
         tools:context=".Images"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="none"
+            android:gravity="center"
+            android:id="@+id/pageTitle">
+        </TextView>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

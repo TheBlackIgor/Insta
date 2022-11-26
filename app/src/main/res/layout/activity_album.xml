@@ -5,9 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AlbumActivity">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -29,13 +27,12 @@
             android:gravity="center">
 
             <TextView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:text="+"
-                android:textSize="90sp"
-                android:textFontWeight="800"
+                android:layout_width="367dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                />
+                android:text="+"
+                android:textFontWeight="800"
+                android:textSize="90sp" />
         </LinearLayout>
 
     </LinearLayout>
