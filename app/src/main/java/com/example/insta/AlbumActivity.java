@@ -47,6 +47,8 @@ public class AlbumActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_album);
 
+        setTitle("Albums");
+
         File pic = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         File dir = new File(pic, "swierczynski");
         dir.mkdir();
@@ -125,20 +127,10 @@ public class AlbumActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(AlbumActivity.this, Images.class);
+                Log.d("Images", "działaj proszę");
+                Intent intent = new Intent(AlbumActivity.this, ImagesActivity.class);
                 intent.putExtra("folder", adapterView.getItemAtPosition(i).toString());
                 startActivity(intent);
-                AlertDialog.Builder alert = new AlertDialog.Builder(AlbumActivity.this);
-                alert.setTitle(dir.listFiles()[i].getName());
-
-                alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int which) {
-
-                    }
-                });
-
-                alert.show();
             }
         });
 
