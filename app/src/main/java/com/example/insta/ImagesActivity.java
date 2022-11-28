@@ -11,6 +11,9 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.io.File;
@@ -34,12 +37,30 @@ public class ImagesActivity extends AppCompatActivity {
         File dir = new File(pic, "swierczynski/" + folder);
         dir.mkdir();
         Log.d("images", "Amount of photos: "+dir.listFiles().length);
+
+        for (int i = 0; i<dir.listFiles().length; i++){
+            String imagePath = dir.listFiles()[i].getPath();
+            Bitmap bmp = betterImageDecode(imagePath);
+            ImageView img = new ImageView(ImagesActivity.this);
+            img.setImageBitmap(bmp);
+            img.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            img.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    Intent intent = new Intent(ImagesActivity.this, ImageActivity.class);
+                    intent.putExtra("img" , imagePath);
+                    startActivity(intent);
+                }
+            });
+            imagesContainer.addView(img);
+            img.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 400));
+        }
     }
 
     private Bitmap betterImageDecode(String filePath) {
         Bitmap myBitmap;
         BitmapFactory.Options options = new BitmapFactory.Options();    //opcje przekształcania bitmapy
-        options.inSampleSize = 4; // zmniejszenie jakości bitmapy 4x
+        options.inSampleSize = 2; // zmniejszenie jakości bitmapy 4x
         //
         myBitmap = BitmapFactory.decodeFile(filePath, options);
         return myBitmap;
