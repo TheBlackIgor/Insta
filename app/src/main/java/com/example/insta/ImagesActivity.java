@@ -40,6 +40,7 @@ public class ImagesActivity extends AppCompatActivity {
 
         for (int i = 0; i<dir.listFiles().length; i++){
             String imagePath = dir.listFiles()[i].getPath();
+            String imageName = dir.listFiles()[i].getName();
             Bitmap bmp = betterImageDecode(imagePath);
             ImageView img = new ImageView(ImagesActivity.this);
             img.setImageBitmap(bmp);
@@ -49,11 +50,19 @@ public class ImagesActivity extends AppCompatActivity {
                 public void onClick(View view){
                     Intent intent = new Intent(ImagesActivity.this, ImageActivity.class);
                     intent.putExtra("img" , imagePath);
+                    intent.putExtra("imgName", imageName);
                     startActivity(intent);
                 }
             });
             imagesContainer.addView(img);
-            img.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 400));
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    400
+            );
+
+            params.setMargins(10,20,20,10);
+
+            img.setLayoutParams(params);
         }
     }
 

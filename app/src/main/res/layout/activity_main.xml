@@ -13,12 +13,9 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
-
-
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             android:layout_weight="1"
             tools:ignore="MissingConstraints"
@@ -48,13 +45,12 @@
         <LinearLayout
             android:id="@+id/buttonCamera"
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             android:layout_weight="1"
             tools:ignore="MissingConstraints">
 
             <LinearLayout
-
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -99,7 +95,7 @@
                     android:layout_height="34dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Album" />
+                    android:text="Albums" />
 
 
             </LinearLayout>
@@ -107,7 +103,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             android:layout_weight="1"
             tools:ignore="MissingConstraints">
@@ -160,6 +156,35 @@
                     android:gravity="center"
                     android:text="Network" />
 
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <LinearLayout
+                android:id="@+id/albumsManaging"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="114dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/baseline_collections_24" />
+
+                <TextView
+                    android:layout_width="88dp"
+                    android:layout_height="34dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Managing albums" />
 
             </LinearLayout>
         </LinearLayout>

@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     private LinearLayout cameraBtn;
     private LinearLayout albumsBtn;
+    private LinearLayout albumsManagingBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         cameraBtn = findViewById(R.id.buttonCamera);
         albumsBtn = findViewById(R.id.buttonAlbum);
+        albumsManagingBtn = findViewById((R.id.albumsManaging));
         albumsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
@@ -75,6 +77,13 @@ public class MainActivity extends AppCompatActivity {
                 });
                 alert.show();
 
+            }
+        });
+        albumsManagingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AlbumsManagingActivity.class);
+                startActivity(intent);
             }
         });
         checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, 100);
